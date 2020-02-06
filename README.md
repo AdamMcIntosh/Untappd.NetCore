@@ -53,10 +53,7 @@ var response = repository.Post(ts, checkin);
 ## Contributing
 
 * Everyone is welcome to contribute!
-* If you are looking for something to do, look at the issues.
 * There are no special instructions, submit pull requests against the master branch.
-* Releases to nuget occur on successful release branch builds.
- * The only reason I do not publish on master, is because sometimes commits can just contain readme files, or unit tests changes that do not affect the nuget package
 
 Current contributors:
 * Adam McIntosh (https://github.com/AdamMcIntosh)
