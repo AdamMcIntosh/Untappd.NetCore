@@ -1,6 +1,6 @@
 # Untappd.NetCore
 
-.Net Core Implementation of  https://github.com/TerribleDev/Untappd.Net
+.Net Core Implementation of Tommy Parnell's Untappd .NET API https://github.com/TerribleDev/Untappd.Net
 
 
 ## API Coverage
@@ -59,6 +59,4 @@ var response = repository.Post(ts, checkin);
  * The only reason I do not publish on master, is because sometimes commits can just contain readme files, or unit tests changes that do not affect the nuget package
 
 Current contributors:
-* Tommy James Parnell (https://github.com/tparnell8)
-* Rodrigo P Reis (https://github.com/rodkings)
-
+* Adam McIntosh (https://github.com/AdamMcIntosh)
