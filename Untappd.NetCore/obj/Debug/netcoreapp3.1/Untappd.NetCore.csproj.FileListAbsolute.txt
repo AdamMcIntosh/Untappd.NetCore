@@ -1,0 +1,9 @@
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/bin/Debug/netcoreapp3.1/Untappd.NetCore.deps.json
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/bin/Debug/netcoreapp3.1/Untappd.NetCore.dll
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/bin/Debug/netcoreapp3.1/Untappd.NetCore.pdb
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.csprojAssemblyReference.cache
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.csproj.CoreCompileInputs.cache
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.AssemblyInfoInputs.cache
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.AssemblyInfo.cs
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.dll
+/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/Debug/netcoreapp3.1/Untappd.NetCore.pdb

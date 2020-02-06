@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untappd.NetCore", "Untappd.NetCore\Untappd.NetCore.csproj", "{1513B71D-3F07-4EBF-9E9B-E645CE02490A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1513B71D-3F07-4EBF-9E9B-E645CE02490A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1513B71D-3F07-4EBF-9E9B-E645CE02490A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1513B71D-3F07-4EBF-9E9B-E645CE02490A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1513B71D-3F07-4EBF-9E9B-E645CE02490A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
