@@ -7,9 +7,9 @@ namespace Untappd.NetCore.Responses.Actions
 {
 	public class RemoveFriend : IAction
 	{
-		public Method RequestMethod { get { return Method.GET; } }
+		public Method RequestMethod { get { return Method.Get; } }
 		public string EndPoint { get; private set; }
-		public IDictionary<string, object> BodyParameters { get { return new Dictionary<string, object>(); } }
+        public IDictionary<string, object> BodyParameters { get; set; }
 
 		public RemoveFriend(string target_id)
 		{

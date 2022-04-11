@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -11,8 +12,8 @@ namespace Untappd.NetCore.Request
 {
     public sealed partial class Repository
     {
-        internal IRestClient Client;
-        internal IRestRequest Request;
+        internal RestClient Client;
+        internal RestRequest Request;
         public bool FailFast { get; set; }
 
         /// <summary>
@@ -36,31 +37,28 @@ namespace Untappd.NetCore.Request
             FailFast = failFast;
         }
 
-        [Obsolete("This constructor is used for mocking purposes only", false)]
-        internal Repository(IRestClient client, IRestRequest request)
-        {
-            Client = client;
-            Request = request;
-        }
 
-        internal Repository ConfigureRequest(string endPoint, IDictionary<string, object> bodyParameters = null, Method webMethod = Method.GET)
+        internal Repository ConfigureRequest(string endPoint, IDictionary<string, object> bodyParameters, Method webMethod = Method.Get)
         {
             Request.Resource = endPoint;
             Request.Method = webMethod;
-            if (Request.Parameters != null && Request.Parameters.Count > 0)
+            if (Request.Parameters.Count > 0)
             {
-                Request.Parameters.Clear();
+                foreach (var requestParameter in Request.Parameters)
+                {
+                    Request.Parameters.RemoveParameter(requestParameter);
+                }
             }
 
             if (bodyParameters == null) return this;
             foreach (var param in bodyParameters)
             {
-                Request.AddParameter(param.Key, param.Value);
+                Request.AddParameter(param.Key, param.Value.ToString());
             }
             return this;
         }
 
-        internal Repository ConfigureRequest(IUntappdCredentials credentials, string endPoint, IDictionary<string, object> bodyParameters = null, Method webMethod = Method.GET)
+        internal Repository ConfigureRequest(IUntappdCredentials credentials, string endPoint, IDictionary<string, object> bodyParameters = null, Method webMethod = Method.Get)
         {
             ConfigureRequest(endPoint, bodyParameters, webMethod);
             foreach (var untappdCredential in credentials.AuthenticationData)
@@ -70,19 +68,17 @@ namespace Untappd.NetCore.Request
             return this;
         }
 
-        private TResult ExecuteRequest<TResult>()
-            where TResult : class
+        private async Task<TResult> ExecuteRequest<TResult>() where TResult : class
         {
-            return ProcessExecution<TResult>(Client.Execute(Request));
+            return ProcessExecution<TResult>(await Client.ExecuteAsync(Request));
         }
 
-        private async Task<TResult> ExecuteRequestAsync<TResult>()
-            where TResult : class
+        private async Task<TResult> ExecuteRequestAsync<TResult>() where TResult : class
         {
-            return ProcessExecution<TResult>(await Client.ExecuteTaskAsync(Request));
+            return ProcessExecution<TResult>(await Client.ExecuteAsync(Request));
         }
 
-        private TResult ProcessExecution<TResult>(IRestResponse response)
+        private TResult ProcessExecution<TResult>(RestResponse response)
             where TResult : class
         {
             //if the return type is not 200 throw errors

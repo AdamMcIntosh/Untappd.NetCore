@@ -23,8 +23,7 @@ namespace Untappd.NetCore.Request
 				throw new ArgumentNullException("action");
 			}
 
-			return ConfigureRequest(credentials, action.EndPoint, action.BodyParameters, action.RequestMethod)
-				.ExecuteRequest<dynamic>();
+			return ConfigureRequest(credentials, action.EndPoint, action.BodyParameters, action.RequestMethod).ExecuteRequest<dynamic>();
 		}
 
 		/// <summary>

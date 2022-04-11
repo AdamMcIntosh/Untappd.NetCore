@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using RestSharp;
 using Untappd.NetCore.Authentication;
 
 namespace Untappd.NetCore.Request
@@ -15,12 +17,11 @@ namespace Untappd.NetCore.Request
 		/// <param name="bodyParameters">Any additional params you wish to add to the request</param>
 		/// <exception cref="HttpErrorException"></exception>
 		/// <returns></returns>
-		public TResult Get<TResult>(IUnAuthenticatedUntappdCredentials credentials, string urlParameter, IDictionary<string, object> bodyParameters = null)
+		public async Task<TResult> Get<TResult>(IUnAuthenticatedUntappdCredentials credentials, string urlParameter, Dictionary<string, object> bodyParameters = null)
 			where TResult : class, IUnAuthenticatedRequest, new()
 		{
 			var result = new TResult();
-			return ConfigureRequest(credentials, result.EndPoint(urlParameter), bodyParameters)
-			.ExecuteRequest<TResult>();
+			return await ConfigureRequest(credentials, result.EndPoint(urlParameter), bodyParameters).ExecuteRequest<TResult>();
 		}
 
 		/// <summary>
@@ -32,7 +33,7 @@ namespace Untappd.NetCore.Request
 		/// <param name="bodyParameters"></param>
 		/// <exception cref="HttpErrorException"></exception>
 		/// <returns></returns>
-		public Task<TResult> GetAsync<TResult>(IUnAuthenticatedUntappdCredentials credentials, string urlParameter, IDictionary<string, object> bodyParameters = null)
+		public Task<TResult> GetAsync<TResult>(IUnAuthenticatedUntappdCredentials credentials, string urlParameter, Dictionary<string, object> bodyParameters = null)
 		   where TResult : class, IUnAuthenticatedRequest, new()
 		{
 			var result = new TResult();
@@ -49,12 +50,10 @@ namespace Untappd.NetCore.Request
 		/// <param name="bodyParameters">Any additional params you wish to add to the request</param>
 		/// <exception cref="HttpErrorException"></exception>
 		/// <returns></returns>
-		public TResult Get<TResult>(IAuthenticatedUntappdCredentials credentials, string urlParameter = "", IDictionary<string, object> bodyParameters = null)
-			where TResult : class, IAuthenticatedRequest, new()
+		public async Task<TResult> Get<TResult>(IAuthenticatedUntappdCredentials credentials, string urlParameter = "", Dictionary<string, object> bodyParameters = null) where TResult : class, IAuthenticatedRequest, new()
 		{
 			var result = new TResult();
-			return ConfigureRequest(credentials, result.EndPoint(urlParameter), bodyParameters)
-			.ExecuteRequest<TResult>();
+			return await ConfigureRequest(credentials, result.EndPoint(urlParameter), bodyParameters).ExecuteRequest<TResult>();
 		}
 
 		/// <summary>
@@ -66,7 +65,7 @@ namespace Untappd.NetCore.Request
 		/// <param name="bodyParameters"></param>
 		/// <exception cref="HttpErrorException"></exception>
 		/// <returns></returns>
-		public Task<TResult> GetAsync<TResult>(IAuthenticatedUntappdCredentials credentials, string urlParameter = "", IDictionary<string, object> bodyParameters = null)
+		public Task<TResult> GetAsync<TResult>(IAuthenticatedUntappdCredentials credentials, string urlParameter = "", Dictionary<string, object> bodyParameters = null)
 		   where TResult : class, IAuthenticatedRequest, new()
 		{
 			var result = new TResult();

@@ -7,7 +7,7 @@ namespace Untappd.NetCore.Responses.Actions
 {
 	public class AddComment : IAction
 	{
-		public Method RequestMethod { get { return Method.POST; } }
+		public Method RequestMethod { get { return Method.Post; } }
 		public string EndPoint { get; private set; }
 		public IDictionary<string, object> BodyParameters { get; private set; }
 

@@ -17,7 +17,7 @@ namespace Untappd.NetCore.Exception
 
 		private readonly string _message;
 
-		public HttpErrorException(IRestRequest request, IRestResponse response)
+		public HttpErrorException(RestRequest request, RestResponse response)
 		{
 			if (request == null)
 			{

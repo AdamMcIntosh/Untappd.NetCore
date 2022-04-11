@@ -6,8 +6,8 @@ namespace Untappd.NetCore.Responses.Actions
 {
 	public class ToastUntoast : IAction
 	{
-		public Method RequestMethod { get { return Method.POST; } }
-		public IDictionary<string, object> BodyParameters { get { return new Dictionary<string, object>(); } }
+		public Method RequestMethod { get { return Method.Post; } }
+		public IDictionary<string, object> BodyParameters { get; set; }
 		public string EndPoint { get; private set; }
 
 		/// <summary>

@@ -6,7 +6,7 @@ namespace Untappd.NetCore.Responses.Actions
 {
     public class RemoveFromWishList : IAction
 	{
-		public Method RequestMethod { get { return Method.GET; } }
+		public Method RequestMethod { get { return Method.Get; } }
 		public string EndPoint { get { return "v4/user/wishlist/delete"; } }
 		public IDictionary<string, object> BodyParameters { get; private set; }
 

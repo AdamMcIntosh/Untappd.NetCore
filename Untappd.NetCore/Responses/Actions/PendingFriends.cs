@@ -6,7 +6,7 @@ namespace Untappd.NetCore.Responses.Actions
 {
     public class PendingFriends : IAction
 	{
-		public Method RequestMethod { get { return Method.GET; } }
+		public Method RequestMethod { get { return Method.Get; } }
 		public string EndPoint { get { return "v4/user/pending"; } }
 
 		public IDictionary<string, object> BodyParameters

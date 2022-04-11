@@ -1,32 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/Untappd.NetCore.csproj": {}
+    "C:\\Users\\Adam\\Documents\\GitHub\\Untappd.NetCore\\Untappd.NetCore\\Untappd.NetCore.csproj": {}
   },
   "projects": {
-    "/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/Untappd.NetCore.csproj": {
+    "C:\\Users\\Adam\\Documents\\GitHub\\Untappd.NetCore\\Untappd.NetCore\\Untappd.NetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/Untappd.NetCore.csproj",
+        "projectUniqueName": "C:\\Users\\Adam\\Documents\\GitHub\\Untappd.NetCore\\Untappd.NetCore\\Untappd.NetCore.csproj",
         "projectName": "Untappd.NetCore",
-        "projectPath": "/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/Untappd.NetCore.csproj",
-        "packagesPath": "/Users/adam/.nuget/packages/",
-        "outputPath": "/Users/adam/Projects/Untappd.NetCore/Untappd.NetCore/obj/",
+        "projectPath": "C:\\Users\\Adam\\Documents\\GitHub\\Untappd.NetCore\\Untappd.NetCore\\Untappd.NetCore.csproj",
+        "packagesPath": "C:\\Users\\Adam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adam\\Documents\\GitHub\\Untappd.NetCore\\Untappd.NetCore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/adam/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Adam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,15 +38,16 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.3, )"
+              "version": "[13.0.1, )"
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[106.10.1, )"
+              "version": "[107.3.0, )"
             }
           },
           "imports": [
@@ -63,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

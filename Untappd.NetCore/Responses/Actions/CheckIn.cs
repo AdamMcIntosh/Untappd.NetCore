@@ -9,7 +9,7 @@ namespace Untappd.NetCore.Responses.Actions
 	{
 		private short _rating;
 		private string _shout;
-		public Method RequestMethod { get { return Method.POST; } }
+		public Method RequestMethod { get { return Method.Post; } }
 		public string EndPoint { get { return "v4/checkin/add"; } }
 
 		public IDictionary<string, object> BodyParameters
